@@ -15,7 +15,7 @@ export const home = {
     linkLabel: "打开作品",
   },
   identity: {
-    motto: "悟已往之不谏，知来者之可追",
+    motto: "已识乾坤大，尤怜草木青",
     learning: "零到全栈",
   },
 };

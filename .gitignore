@@ -1,55 +1,19 @@
-README.md
-node_modules
-dist
+# dependencies
+node_modules/
 
+# next.js
+.next/
+out/
 
+# production
+build/
+dist/
 
+# editor
+.vscode/*
+!.vscode/extensions.json
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-*~
-*.un~
+# misc
+.DS_Store
+*.log
+.env*
