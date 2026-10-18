@@ -1,0 +1,14 @@
+import { animate, scrambleText } from "anime.js";
+
+export function initScoreAnim() {
+  var btn = document.querySelector(".primary-button");
+  var scoreEl = document.querySelector("[data-score]");
+  if (!btn || !scoreEl) return;
+
+  btn.addEventListener("click", function () {
+    animate(scoreEl, {
+      innerHTML: scrambleText({ chars: "0-9" }),
+      duration: 1500,
+    });
+  });
+}
