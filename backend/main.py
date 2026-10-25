@@ -1,4 +1,6 @@
 import uuid
+import os
+from dotenv import load_dotenv
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI,Request, Response
 from pydantic import BaseModel
@@ -7,13 +9,16 @@ from snownlp import SnowNLP
 from datetime import datetime, timezone
 from storage import init_db,save_record, get_history
 
+load_dotenv()                        # ← 读同目录下的 .env
+
+ALLOWED_ORIGINS = os.getenv("ALLOWED_ORIGINS").split(",")
 
 
 app = FastAPI()
 init_db()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=ALLOWED_ORIGINS,
     allow_methods=["GET", "POST"],
     allow_credentials=True,   
 )
